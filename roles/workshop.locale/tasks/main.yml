@@ -1,5 +1,3 @@
 ---
 - name: "Local language"
   lineinfile: dest=/etc/sysconfig/i18n regexp='^LANG=' line='LANG={{ language }}'
-
-

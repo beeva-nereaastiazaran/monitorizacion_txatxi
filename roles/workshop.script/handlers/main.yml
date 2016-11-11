@@ -1,0 +1,2 @@
+- name: restart systemd
+  shell: service monitorizacion restart

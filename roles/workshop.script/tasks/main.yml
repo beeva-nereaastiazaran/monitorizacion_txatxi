@@ -1,0 +1,16 @@
+---
+- name: "Script | Create dir"
+  file: path=/opt/scripts state=directory mode=0755
+
+- name: "Script | Copy file"
+  template: src=statsd-agent.j2 dest=/opt/scripts/statsd-agent.sh mode=0610 force=yes
+  notify: restart systemd
+
+- name: "Service | Copy file"  
+  template: src=monitorizacion.j2 dest=/etc/init.d/monitorizacion mode=0111
+
+- name: "Service | Start service"
+  shell: service monitorizacion Start
+  
+#- name: "Script @| link init"
+#  file: "src=/opt/scripts/statsd-agent.sh path=/etc/init.d/statsd-agent state=link owner=root group=root"

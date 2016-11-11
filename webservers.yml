@@ -10,7 +10,7 @@
     - workshop.timezone
     - workshop.users
     - workshop.python
-
+    - workshop.script
   #tasks:                
   #  - name: ""
   #    file: 
