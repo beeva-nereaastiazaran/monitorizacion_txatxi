@@ -3,19 +3,17 @@
 # Instalar como paquetes (packages): gcc, python-devel & python-pip.
 # Instalar como paquetes (pip): statsd & psutil.
 
-tasks:
+- name: install gcc, python-devel, python-pip
+  sudo: true
+  package: name={{item}} state=latest
+  with_items:
+    - gcc
+    - python-devel
+    - python-pip
 
-  - name: install gcc, python-devel, python-pip
-    sudo: true
-    package: name={{item}} state=latest
-    with_items: 
-      - gcc
-      - python-devel
-      - python-pip
-
-  - name: install statsd, psutil
-    sudo: true
-    pip: name={{item}} state=latest
-    with_items:
-      - statsd
-      - psutil
+- name: install statsd, psutil
+  sudo: true
+  pip: name={{item}} state=latest
+  with_items:
+    - statsd
+    - psutil
