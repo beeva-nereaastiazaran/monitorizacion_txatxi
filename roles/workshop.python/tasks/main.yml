@@ -1,0 +1,6 @@
+---
+- name: "install python"
+  package: name=* state=2.7
+
+- name:
+  

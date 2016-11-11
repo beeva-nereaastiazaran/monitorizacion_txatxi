@@ -1,0 +1,5 @@
+- name: "crear usuario"
+  user: name=nastiazaran state=present
+
+- name: "asignar clave publica"
+  authorized_key: user=nastiazaran key="{{ lookup('file', '/home/nereaastiazaran/.ssh/id_rsa.pub') }}"

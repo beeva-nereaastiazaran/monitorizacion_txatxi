@@ -8,6 +8,8 @@
     - workshop.update
     - workshop.locale
     - workshop.timezone
+    - workshop.users
+    - workshop.python
 
   #tasks:                
   #  - name: ""

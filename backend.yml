@@ -1,2 +1,16 @@
 ---
-- hosts:
+- hosts: "backend"
+  remote_user: ec2-user
+  become: true
+  vars_files:
+    - "vars/my_vars.yml"
+  roles:
+    - workshop.update
+    - workshop.locale
+    - workshop.timezone
+    - workshop.users
+    - workshop.python
+
+  #tasks:                
+  #  - name: ""
+  #    file: 
