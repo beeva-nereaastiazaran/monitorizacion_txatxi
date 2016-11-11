@@ -4,7 +4,6 @@
 # Instalar como paquetes (pip): statsd & psutil.
 
 - name: install gcc, python-devel, python-pip
-  sudo: true
   package: name={{item}} state=latest
   with_items:
     - gcc

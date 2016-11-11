@@ -1,15 +1,15 @@
 #! /bin/sh
 
-NAME=daemon_name
-DESC="My first linux daemon"
+NAME=monitorizacion
+DESC="Monitorizacion Linux Daemon"
 PIDFILE="/var/run/${NAME}.pid"
 LOGFILE="/var/log/${NAME}.log"
 
 # PHP binary path
-DAEMON="/usr/bin/php"
+DAEMON="/usr/bin/python"
 
 # Path of your php script
-DAEMON_OPTS="/opt/scripts/statsd-agent.sh"
+DAEMON_OPTS="/opt/scripts/statsd-agent.py"
 
 START_OPTS="--start --background --make-pidfile --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
 STOP_OPTS="--stop --pidfile ${PIDFILE}"
