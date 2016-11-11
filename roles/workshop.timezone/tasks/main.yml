@@ -1,0 +1,3 @@
+---
+- name: "Set timezome"
+  file: src="/usr/share/zoneinfo/{{time_zone}}" dest="locatime" state=link
